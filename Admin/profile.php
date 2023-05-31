@@ -30,18 +30,19 @@
  					window.location="edit.php"
  				</script>
  				<?php
- 			}
-
-
+			}
  				$q=mysqli_query($conn,"SELECT * FROM admin where username='$_SESSION[login_user]' ;");
+			    $p=mysqli_query($conn,"SELECT pic FROM admin where username='$_SESSION[login_user]' ;");
  			?>
  			<h2 style="text-align: center;">My Profile</h2>
 
  			<?php
- 				$row=mysqli_fetch_assoc($q);
-
+                $row=mysqli_fetch_assoc($q);
+			    $row2=mysqli_fetch_assoc($p);
+				$pic = $row2['pic'];
  				echo "<div style='text-align: center'>
- 					<img class='img-circle profile-img' height=110 width=120 src='images/".$_SESSION['pic']."'>
+ 				<img class='img-circle profile-img' height=110 width=120 src='images/" . $pic . " '>
+
  				</div>";
  			?>
  			<div style="text-align: center;"> <b>Welcome, </b>

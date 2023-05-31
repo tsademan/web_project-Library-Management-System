@@ -1,4 +1,5 @@
 <?php
+ include "dbConnection.php";
   session_start();
 ?>
 <!DOCTYPE html>
@@ -44,9 +45,12 @@
                     <div style="color: white">
 
                       <?php
-                        echo "<img class='img-circle profile_img' height=30 width=30 src='images/".$_SESSION['pic']."'>";
-
-                        echo " ".$_SESSION['login_user']; 
+                       $p=mysqli_query($conn,"SELECT pic FROM admin where username='$_SESSION[login_user]' ;");
+                       $row2=mysqli_fetch_assoc($p);
+                       $pic = $row2['pic'];
+                    // Display the profile image
+                    echo "<img class='img-circle profile_img' height=30 width=30 src='images/" . $pic . "'>";
+                   
                       ?>
                     </div>
                   </a></li>

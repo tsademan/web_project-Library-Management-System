@@ -64,9 +64,9 @@
 		<input class="form-control" type="text" name="username" value="<?php echo $username; ?>">
 
 		 <label for="sex">Male</label>
-        <input class="form-control" name="sex" type="radio" id="m" value="Male"  required="">
+        <input  name="sex" type="radio" id="m" value="Male"  required="">
          <label for="sex">Female</label>
-         <input class="form-control" name="sex" type="radio" id="f" value="Female" required="">
+         <input  name="sex" type="radio" id="f" value="Female" required=""><br>
 
 		<label><h4><b>Contact No</b></h4></label>
 		<input class="form-control" type="text" name="contact" value="<?php echo $contact; ?>">

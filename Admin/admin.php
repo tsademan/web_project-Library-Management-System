@@ -22,10 +22,9 @@ session_start();
             <ul>
                <li><a href="index.php">HOME</a></li>
                <li><a href="books.php">BOOKS</a></li>
-               <li><a href="admin.php">ADMIN_LOGIN</a></li>
-               <li><a href="Registration.php">REGISTRATION</a></li>
+               <li><a href="admin.php">LOGIN</a></li>
+               <li><a href="Registration.php">SING-UP</a></li>
                <li><a href="feedback.php">FEEDBACK</a></li>
-               <!-- <li><a href="student.php">STUDENT-INFORMATION</a></li> -->
             </ul>
           </nav>
         </header>

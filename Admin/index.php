@@ -25,8 +25,9 @@ session_start();
                <li><a href="index.php">HOME</a></li>
                <li><a href="books.php">BOOKS</a></li>
                <li><a href="logout.php">LOGOUT</a></li>
-               <li><a href="Registration.php">REGISTRATION</a></li>
+               <li><a href="profile.php">PROFILE</a></li>
                <li><a href="feedback.php">FEEDBACK</a></li>
+               
             </ul>
           </nav>
            <?php
@@ -38,8 +39,8 @@ session_start();
          <ul>
             <li><a href="index.php">HOME</a></li>
             <li><a href="books.php">BOOKS</a></li>
-            <li><a href="admin.php">ADMIN_LOGIN</a></li>
-            <li><a href="Registration.php">REGISTRATION</a></li>
+            <li><a href="admin.php">LOGIN</a></li>
+            <li><a href="Registration.php">SING-UP</a></li>
             <li><a href="feedback.php">FEEDBACK</a></li>
          </ul>
        </nav>
@@ -47,7 +48,7 @@ session_start();
           }
           ?>
    
-       <h1 style="color:wheat">ONLINE LIBRARY MANAGEMENT SYSTEM</h1>
+       <h1>LIBRARY MANAGEMENT SYSTEM</h1>
      </header>
      <section style="width: 300px;">
       <img style="height:460px;width: 1360px;" src="images/w.jpg"> 

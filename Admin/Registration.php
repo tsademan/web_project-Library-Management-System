@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $conn = mysqli_connect($servername, $username, $password, $dbname);
     $fname =$_POST['fname'];
     $lname = $_POST['lname'];
+    $username = $_POST['username'];
     $sex =  $_POST['sex'];
     $contact = $_POST['contact'];
     $email = $_POST['email'];
@@ -24,8 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     }
     if($count==0) { 
-mysqli_query($conn,"INSERT INTO `admin` VALUES('','$_POST[fname]','$_POST[lname]',
-'$_POST[sex]','$_POST[contact]','$_POST[email]','$_POST[passw]','a.jpg');");
+mysqli_query($conn,"INSERT INTO `admin` VALUES('','$_POST[fname]','$_POST[lname]','$_POST[username]',
+'$_POST[sex]','$_POST[contact]','$_POST[email]','$_POST[passw]','p.jpg');");
 $conn->close();
 ?>
 <script type="text/javascript">
@@ -36,7 +37,7 @@ $conn->close();
 else{
   ?>
   <script type="text/javascript">
-  alert("Warning: user name already exist.");
+  alert("user address already exist.");
   </script>
   <?php         
 }
@@ -66,8 +67,8 @@ else{
                <li><a href="index.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-home"> HOME</span></a></li>
                <li><a href="books.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-book"> BOOKS</span></a></li>
                <li><a href="admin.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-log-in"> LOGIN</span></a></li>
-               <li><a href="student.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-information"> STUDENT-INFORMATION</span></a></li>
-               <li><a href="Registration.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-user"> SIGN UP</span></a></li>
+               <li><a href="student.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-information">STUDENT-INFORMATION</span></a></li>
+               <li><a href="Registration.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-user"> SIGN-UP</span></a></li>
                <li><a href="feedback.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-comment"> FEEDBACK</span></a></li>
             </ul> 
           </nav>
@@ -82,7 +83,7 @@ else{
                  <input class="form-control" style="margin-bottom: 17px;" name="fname" type="text" placeholder="First Name" required="">
 
                  <input class="form-control" style="margin-bottom: 17px;" name="lname" type="text" placeholder="Last Name" required="">
-
+                 <input class="form-control" style="margin-bottom: 17px;" name="username" type="text" placeholder="username" required="">
                  <label for="sex">Male</label>
                  <input name="sex" type="radio" id="m" value="Male"  required="">
                  <label for="sex">Female</label>
@@ -92,7 +93,7 @@ else{
 
                  <input class="form-control" style="margin-bottom: 17px;" name="email" type="email" placeholder="Email-Address" required="">
         
-                 <input class="form-control" style="margin-bottom: 17px;" name="passw" type="password" placeholder="conform" required="">
+                 <input class="form-control" style="margin-bottom: 17px;" name="passw" type="password" placeholder="password" required="">
                  <legend>
                  
                  <button class="btn btn-default" id="btn1">Sign Up</button>
