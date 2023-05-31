@@ -106,8 +106,14 @@
 
                 <?php
                 if(isset($_SESSION['login_user']))
+                { 	
+				   $p=mysqli_query($conn,"SELECT pic FROM admin where username='$_SESSION[login_user]' ;");
+                   $row2=mysqli_fetch_assoc($p);
+				   $pic = $row2['pic'];
+				   echo "<div style='text-align: center'>
+				   <img class='img-circle profile-img' height=110 width=120 src='images/" . $pic . " '>
+				   </div>";
 
-                { 	echo "<img class='img-circle profile_img' height=120 width=120 src='images/".$_SESSION['pic']."'>";
                     echo "</br></br>";
 
                     echo "Welcome ".$_SESSION['login_user']; 
@@ -146,7 +152,7 @@
 	<div class="srch">
 		<br>
 		<form method="post" action="" name="form1">
-			<input type="text" name="username" class="form-control" placeholder="Username" required=""><br>
+			<input type="text" name="email" class="form-control" placeholder="Username" required=""><br>
 			<input type="text" name="bid" class="form-control" placeholder="BID" required=""><br>
 			<button class="btn btn-default" name="submit" type="submit">Submit</button><br>
 		</form>
@@ -158,7 +164,7 @@
 	
 	if(isset($_SESSION['login_user']))
 	{
-		$sql= "SELECT student.username,roll,books.bid,name,authors,edition,status FROM student inner join issue_book ON student.username=issue_book.username inner join books ON issue_book.bid=books.bid WHERE issue_book.approve =''";
+		$sql= "SELECT student2.email,contact,books.bid,name,authors,edition,status FROM student2 inner join issue_book ON student2.username=issue_book.username inner join books ON issue_book.bid=books.bid WHERE issue_book.approve =''";
 		$res= mysqli_query($conn,$sql);
 
 		if(mysqli_num_rows($res)==0)

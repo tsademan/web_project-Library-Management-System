@@ -1,4 +1,5 @@
 <?php
+include "dbConnection.php";
 session_start();
 ?>
 <!DOCTYPE html>
@@ -56,8 +57,11 @@ session_start();
       <?php
        if(isset($_SESSION['login_user']))
        { 
-        echo "<img style='position:relative;top:-320px;left:1000px;width:200px;height:200px;' src='images/".$_SESSION['pic']."'>";
-      echo "<br><span style='position:relative;top:-320px;left:1000px;font-size: 20px;color:green;
+        $p=mysqli_query($conn,"SELECT pic FROM admin where username='$_SESSION[login_user]' ;");
+        $row2=mysqli_fetch_assoc($p);
+				$pic = $row2['pic'];
+        echo "<img style='position:relative;top:-320px;left:1000px;width:200px;height:200px;' src='images/". $pic . "'>";
+       echo "<br><span style='position:relative;top:-320px;left:1000px;font-size: 20px;color:green;
        font-weight: bold;'>Welcome</span><br><div style='color:white;font-size: 20px;position:relative;top:-320px;left:1000px;'>".$_SESSION['login_user']."</div>";
        }
       ?> 

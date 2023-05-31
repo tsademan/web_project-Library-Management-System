@@ -41,6 +41,7 @@
 			    $row2=mysqli_fetch_assoc($p);
 				$pic = $row2['pic'];
  				echo "<div style='text-align: center'>
+				
  				<img class='img-circle profile-img' height=110 width=120 src='images/" . $pic . " '>
 
  				</div>";
