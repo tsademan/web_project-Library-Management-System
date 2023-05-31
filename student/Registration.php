@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fname =$_POST['fname'];
     $lname = $_POST['lname'];
     $contact = $_POST['contact'];
-    $age = $_POST['age'];
+    $username = $_POST['username'];
     $sex =  $_POST['sex'];
     $email = $_POST['email'];
     $r_date=  $_POST['r_date'];
@@ -27,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     }
     if($count==0) { 
-$query = "INSERT INTO student2(fname, lname, contact, age, sex, email, r_date, pass) 
+$query = "INSERT INTO student2(fname, lname, contact, username, sex, email, r_date, pass) 
 VALUES(?, ?, ?, ?,?,?,?,?)";
 
 $statement=$conn->prepare($query);
-$statement->bind_param('sssissss',$fname,$lname,$contact,$age,$sex,$email,$r_date,$pass);
+$statement->bind_param('ssssssss',$fname,$lname,$contact,$age,$sex,$email,$r_date,$pass);
 $statement->execute();
 
 $conn->close();
@@ -92,7 +92,7 @@ else{
  
                  <input class="form-control" style="margin-bottom: 17px;" name="contact" type="tel" placeholder="phone number">
 
-                 <input class="form-control" style="margin-bottom: 17px;"  name="age" type="number" placeholder="age" required="">
+                 <input class="form-control" style="margin-bottom: 17px;"  name="username" type="text" placeholder="username" required="">
 
                  <label for="sex">Male</label>
                  <input name="sex" type="radio" id="m" value="Male"  required="">
@@ -105,10 +105,9 @@ else{
            
                  <input class="form-control" style="margin-bottom: 17px;" name="pass" type="password" placeholder="password" required="">
           
-                 <input class="form-control" style="margin-bottom: 17px;" name="passw" type="password" placeholder="conform" required="">
                  <legend>
                  
-                 <button class="btn btn-default" id="btn1">Sign Up</button>
+                 <button class="btn btn-default" id="btn1" name="submit">Sign Up</button>
                  <input class="btn btn-default" id="btn2"  type="reset" value="Clear">
                 </legend>
                 </fieldset>

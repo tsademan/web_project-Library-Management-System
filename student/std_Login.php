@@ -22,8 +22,8 @@ session_start();
             <ul>
                <li><a href="index.php">HOME</a></li>
                <li><a href="books.php">BOOKS</a></li>
-               <li><a href="std_Login.php">STUDENT_LOGIN</a></li>
-               <li><a href="Registration.php">REGISTRATION</a></li>
+               <li><a href="std_Login.php">LOGIN</a></li>
+               <li><a href="Registration.php">SIGN-UP</a></li>
                <li><a href="feedback.php">FEEDBACK</a></li>
             </ul>
           </nav>
@@ -40,7 +40,7 @@ session_start();
                  <input style="width:100px;" type="submit" name="submit">
                 </div>
               </form><br><br><br>
-              <a href="" style="font-size:20px;color:rgb(247, 6, 206);">Forget password </a><span style="position:relative;left:100px;color:black">
+              <a href="update_password.php" style="font-size:20px;color:rgb(247, 6, 206);">Forget password </a><span style="position:relative;left:100px;color:black">
                 New For This Website ?<a href="Registration.php" style="color:red;font-size:20px;"> SignUp</a></span>
 
           </div>
@@ -65,7 +65,7 @@ session_start();
         }
         else
         {
-          $_SESSION['login_user'] = $_POST['email'];
+          $_SESSION['login_user'] = $_POST['username'];
           ?>
           <script type="text/javascript">
              window.location="index.php";
