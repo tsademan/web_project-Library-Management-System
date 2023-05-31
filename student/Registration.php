@@ -69,7 +69,6 @@ else{
                <li><a href="index.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-home"> HOME</span></a></li>
                <li><a href="books.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-book"> BOOKS</span></a></li>
                <li><a href="std_Login.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-log-in"> LOGIN</span></a></li>
-               <li><a href="index.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-log-out"> LOGOUT</span></a></li>
                <li><a href="Registration.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-user"> SIGN UP</span></a></li>
                <li><a href="feedback.php"><span style="word-spacing:0px;" class="glyphicon glyphicon-comment"> FEEDBACK</span></a></li>
             </ul> 

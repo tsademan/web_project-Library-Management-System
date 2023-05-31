@@ -117,7 +117,12 @@ th,td
                 <?php
                 if(isset($_SESSION['login_user']))
 
-                {   echo "<img class='img-circle profile_img' height=120 width=120 src='images/".$_SESSION['pic']."'>";
+                {   
+                  $p=mysqli_query($conn,"SELECT pic FROM student where username='$_SESSION[login_user]' ;");
+                  $row2=mysqli_fetch_assoc($p);
+                  $pic = $row2['pic'];
+               // Display the profile image
+                  echo "<img class='img-circle profile-img' height=110 width=120 src='images/" . $pic . " '>";
                     echo "</br></br>";
 
                     echo "Welcome ".$_SESSION['login_user']; 
