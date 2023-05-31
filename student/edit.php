@@ -54,16 +54,16 @@
 		<input class="form-control" type="file" name="file">
 
 		<label><h4><b>First Name: </b></h4></label>
-		<input class="form-control" type="text" name="fname" value="<?php echo $first; ?>">
+		<input class="form-control" type="text" name="fname" value="<?php echo $fname; ?>">
 
 		<label><h4><b>Last Name</b></h4></label>
-		<input class="form-control" type="text" name="lname" value="<?php echo $last; ?>">
+		<input class="form-control" type="text" name="lname" value="<?php echo $lname; ?>">
 
 		<label><h4><b>Username</b></h4></label>
 		<input class="form-control" type="text" name="username" value="<?php echo $username; ?>">
 
 		<label><h4><b>Password</b></h4></label>
-		<input class="form-control" type="text" name="pass" value="<?php echo $password; ?>">
+		<input class="form-control" type="text" name="pass" value="<?php echo $pass; ?>">
 
 		<label><h4><b>Email</b></h4></label>
 		<input class="form-control" type="text" name="email" value="<?php echo $email; ?>">

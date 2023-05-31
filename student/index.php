@@ -22,16 +22,14 @@ session_start();
             ?>
             <div style="color:white;
             position:relative;right:600px;">
-              <?php
-            echo "welcome "."<br>".$_SESSION['login_user'];
-               ?>
+            
             </div>
             <nav>
             <ul>
                <li><a href="index.php">HOME</a></li>
                <li><a href="books.php">BOOKS</a></li>
                <li><a href="logout.php">LOGOUT</a></li>
-               <li><a href="Registration.php">REGISTRATION</a></li>
+               <li><a href="profile.php">PROFILE</a></li>
                <li><a href="feedback.php">FEEDBACK</a></li>
             </ul>
           </nav>
@@ -53,7 +51,7 @@ session_start();
           }
           ?>
    
-       <h1 style="color:wheat">ONLINE LIBRARY MANAGEMENT SYSTEM</h1>
+       <h1 style="color:wheat">LIBRARY MANAGEMENT SYSTEM</h1>
      </header>
      <section>
       <img style="height:460px;width: 1360px;" src="https://npr.brightspotcdn.com/legacy/sites/wnpr/files/201311/library.jpg"> 

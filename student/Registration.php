@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $r_date=  $_POST['r_date'];
     $pass =$_POST['pass'];
-    $pic =$_POST['pic'];
     $count=0;
     $sql="SELECT email FROM `student`";
     $res =mysqli_query($conn,$sql);
@@ -28,20 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     }
     if($count==0) { 
-$query = "INSERT INTO student(fname, lname, contact, username, sex, email, r_date, pass,pic) 
-VALUES(?, ?, ?, ?,?,?,?,?,?)";
-
-$statement=$conn->prepare($query);
-$statement->bind_param('ssssssss',$fname,$lname,$contact,$username,$sex,$email,$r_date,$pass);
-$statement->execute();
-
-$conn->close();
-?>
-<script type="text/javascript">
-  alert("Registration Successful.");
-</script>
-<?php
-}
+      mysqli_query($conn,"INSERT INTO `student` VALUES('$_POST[fname]','$_POST[lname]','$_POST[contact]','$_POST[username]',
+      '$_POST[sex]','$_POST[email]','$_POST[r_date]','$_POST[pass]','p.jpg');");
+      $conn->close();
+      ?>
+      <script type="text/javascript">
+        alert("Registration Successful.");
+      </script>
+      <?php
+      }
 else{
   ?>
   <script type="text/javascript">
