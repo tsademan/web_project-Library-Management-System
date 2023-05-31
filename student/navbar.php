@@ -41,7 +41,10 @@
                   <li><a href="">
                     <div style="color: white">
                       <?php
-                        echo "<img class='img-circle profile_img' height=30 width=30 src='images/".$_SESSION['pic']."'>";
+                     
+                   // Display the profile image
+                    // echo "<img class='img-circle profile_img' height=30 width=30 src='images/" . $pic . "'>";
+                      echo "<img class='img-circle profile_img' height=30 width=30 src='images/".$_SESSION['pic']."'>";
                         echo " ".$_SESSION['login_user']; 
                       ?>
                     </div>
@@ -70,7 +73,7 @@
         $day=0;
 
         $exp='<p style="color:yellow; background-color:red;">EXPIRED</p>';
-        $res= mysqli_query($db,"SELECT * FROM `issue_book` where username ='$_SESSION[login_user]' and approve ='$exp' ;");
+        $res= mysqli_query($conn,"SELECT * FROM `issue_book` where username ='$_SESSION[login_user]' and approve ='$exp' ;");
       
       while($row=mysqli_fetch_assoc($res))
       {

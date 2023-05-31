@@ -35,7 +35,7 @@ session_start();
                 <h1>LIBRARY MANAGEMENT SYSTEM</h1> <br>
                 <h2>User Login Form</h2> <br>
                 <div class="form2">
-                 <input name="email" type="text" placeholder="username" required=""><br><br>
+                 <input name="username" type="text" placeholder="username" required=""><br><br>
                  <input name="pass" type="password" placeholder="password" required=""><br><br>
                  <input style="width:100px;" type="submit" name="submit">
                 </div>
@@ -51,7 +51,7 @@ session_start();
       if(isset($_POST['submit']))
       { 
         $count=0;
-        $res=mysqli_query($conn,"SELECT * FROM `student2` WHERE email='$_POST[email]' && pass='$_POST[pass]';");
+        $res=mysqli_query($conn,"SELECT * FROM `student` WHERE username='$_POST[username]' && pass='$_POST[pass]';");
         $count=mysqli_num_rows($res);
 
         if($count==0)

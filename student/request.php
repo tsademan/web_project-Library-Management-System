@@ -1,5 +1,5 @@
 <?php
-  include "connection.php";
+  include "dbConnection.php";
   include "navbar.php";
 ?>
 <!DOCTYPE html>
@@ -129,7 +129,7 @@
 	<?php
 	if(isset($_SESSION['login_user']))
 		{
-			$q=mysqli_query($db,"SELECT * from issue_book where username='$_SESSION[login_user]' and approve='' ;");
+			$q=mysqli_query($conn,"SELECT * from issue_book where username='$_SESSION[login_user]' and approve='' ;");
 
 			if(mysqli_num_rows($q)==0)
 			{

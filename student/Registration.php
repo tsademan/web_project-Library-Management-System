@@ -15,8 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $r_date=  $_POST['r_date'];
     $pass =$_POST['pass'];
+    $pic =$_POST['pic'];
     $count=0;
-    $sql="SELECT email FROM `student2`";
+    $sql="SELECT email FROM `student`";
     $res =mysqli_query($conn,$sql);
   
     while($row=mysqli_fetch_assoc($res))
@@ -27,11 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     }
     if($count==0) { 
-$query = "INSERT INTO student2(fname, lname, contact, username, sex, email, r_date, pass) 
-VALUES(?, ?, ?, ?,?,?,?,?)";
+$query = "INSERT INTO student(fname, lname, contact, username, sex, email, r_date, pass,pic) 
+VALUES(?, ?, ?, ?,?,?,?,?,?)";
 
 $statement=$conn->prepare($query);
-$statement->bind_param('ssssssss',$fname,$lname,$contact,$age,$sex,$email,$r_date,$pass);
+$statement->bind_param('ssssssss',$fname,$lname,$contact,$username,$sex,$email,$r_date,$pass);
 $statement->execute();
 
 $conn->close();
@@ -116,11 +117,5 @@ else{
             </div>
         </section>
     </div>
-   
-          <script>
-             function submit2(){
-              alert("successfully inserted");
-             }
-          </script>
 </body>
 </html>
