@@ -1,5 +1,6 @@
 <?php
   session_start();
+  include "dbConnection.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,11 +41,12 @@
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="">
                     <div style="color: white">
-                      <?php
-                     
-                   // Display the profile image
-                    // echo "<img class='img-circle profile_img' height=30 width=30 src='images/" . $pic . "'>";
-                      echo "<img class='img-circle profile_img' height=30 width=30 src='images/".$_SESSION['pic']."'>";
+                    <?php
+                       $p=mysqli_query($conn,"SELECT pic FROM student where username='$_SESSION[login_user]' ;");
+                       $row2=mysqli_fetch_assoc($p);
+                       $pic = $row2['pic'];
+                    // Display the profile image
+                    echo "<img class='img-circle profile_img' height=30 width=30 src='images/" . $pic . "'>";
                         echo " ".$_SESSION['login_user']; 
                       ?>
                     </div>

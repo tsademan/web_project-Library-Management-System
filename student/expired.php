@@ -192,21 +192,21 @@ th,td
          $ret='<p style="color:yellow; background-color:green;">RETURNED</p>';
          $exp='<p style="color:yellow; background-color:red;">EXPIRED</p>';
         
-        if(isset($_POST['submit2']))
+        if(isset($_POST['submit']))
         {
           
-        $sql="SELECT student.username,roll,books.bid,name,authors,edition,approve,issue,issue_book.return FROM student inner join issue_book ON student.username=issue_book.username inner join books ON issue_book.bid=books.bid WHERE issue_book.approve ='$ret' and issue_book.username ='$_SESSION[login_user]'  ORDER BY `issue_book`.`return` DESC";
+        $sql="SELECT student.username,email,books.bid,name,authors,edition,approve,issue,issue_book.return FROM student inner join issue_book ON student.username=issue_book.username inner join books ON issue_book.bid=books.bid WHERE issue_book.approve ='$ret' and issue_book.username ='$_SESSION[login_user]'  ORDER BY `issue_book`.`return` DESC";
         $res=mysqli_query($conn,$sql);
 
         }
         else if(isset($_POST['submit3']))
         {
-        $sql="SELECT student.username,roll,books.bid,name,authors,edition,approve,issue,issue_book.return FROM student inner join issue_book ON student.username=issue_book.username inner join books ON issue_book.bid=books.bid WHERE issue_book.approve ='$exp' and issue_book.username ='$_SESSION[login_user]' ORDER BY `issue_book`.`return` DESC";
+        $sql="SELECT student.username,email,books.bid,name,authors,edition,approve,issue,issue_book.return FROM student inner join issue_book ON student.username=issue_book.username inner join books ON issue_book.bid=books.bid WHERE issue_book.approve ='$exp' and issue_book.username ='$_SESSION[login_user]' ORDER BY `issue_book`.`return` DESC";
         $res=mysqli_query($conn,$sql);
         }
         else
         {
-        $sql="SELECT student.username,roll,books.bid,name,authors,edition,approve,issue,issue_book.return FROM student inner join issue_book ON student.username=issue_book.username inner join books ON issue_book.bid=books.bid WHERE issue_book.approve !='' and issue_book.approve !='Yes'  and issue_book.username ='$_SESSION[login_user]' ORDER BY `issue_book`.`return` DESC";
+        $sql="SELECT student.username,email,books.bid,name,authors,edition,approve,issue,issue_book.return FROM student inner join issue_book ON student.username=issue_book.username inner join books ON issue_book.bid=books.bid WHERE issue_book.approve !='' and issue_book.approve !='Yes'  and issue_book.username ='$_SESSION[login_user]' ORDER BY `issue_book`.`return` DESC";
         $res=mysqli_query($conn,$sql);
         }
 
@@ -215,7 +215,7 @@ th,td
         
         echo "<tr style='background-color: #6db6b9e6;'>";
         echo "<th>"; echo "Username";  echo "</th>";
-        echo "<th>"; echo "Roll No";  echo "</th>";
+        echo "<th>"; echo "Email Address";  echo "</th>";
         echo "<th>"; echo "BID";  echo "</th>";
         echo "<th>"; echo "Book Name";  echo "</th>";
         echo "<th>"; echo "Authors Name";  echo "</th>";
@@ -233,7 +233,7 @@ th,td
       {
         echo "<tr>";
           echo "<td>"; echo $row['username']; echo "</td>";
-          echo "<td>"; echo $row['roll']; echo "</td>";
+          echo "<td>"; echo $row['email']; echo "</td>";
           echo "<td>"; echo $row['bid']; echo "</td>";
           echo "<td>"; echo $row['name']; echo "</td>";
           echo "<td>"; echo $row['authors']; echo "</td>";
