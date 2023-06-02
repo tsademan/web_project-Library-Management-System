@@ -37,8 +37,8 @@
 		</div>
 		<div style="padding-left: 30px; ">
 		<form action="" method="post" >
-			<input type="text" name="username" class="form-control" placeholder="Username" required=""><br>
-			<input type="text" name="email" class="form-control" placeholder="Email" required=""><br>
+			<input type="text" name="username" class="form-control" placeholder="Correct username" required=""><br>
+			<input type="text" name="email" class="form-control" placeholder="Correct Email" required=""><br>
 			<input type="text" name="pass" class="form-control" placeholder="New Password" required=""><br>
 			<button class="btn btn-default" type="submit" name="submit" >Update</button>
 		</form>
