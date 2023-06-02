@@ -84,6 +84,8 @@ else{
 
                  <input class="form-control" style="margin-bottom: 17px;" name="lname" type="text" placeholder="Last Name" required="">
  
+                 <input class="form-control" style="margin-bottom: 17px;" name="roll" type="text" placeholder="Roll No" required="">
+                  
                  <input class="form-control" style="margin-bottom: 17px;" name="contact" type="tel" placeholder="phone number">
 
                  <input class="form-control" style="margin-bottom: 17px;"  name="username" type="text" placeholder="username" required="">

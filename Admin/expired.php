@@ -119,7 +119,14 @@ th,td
                 <?php
                 if(isset($_SESSION['login_user']))
 
-                { 	echo "<img class='img-circle profile_img' height=120 width=120 src='images/".$_SESSION['pic']."'>";
+                { 	
+                  $p=mysqli_query($conn,"SELECT pic FROM admin where username='$_SESSION[login_user]' ;");
+                  $row2=mysqli_fetch_assoc($p);
+          $pic = $row2['pic'];
+          echo "<div style='text-align: center'>
+          <img class='img-circle profile-img' height=110 width=120 src='images/" . $pic . " '>
+          </div>";
+
                     echo "</br></br>";
 
                     echo "Welcome ".$_SESSION['login_user']; 
@@ -226,7 +233,7 @@ th,td
         }
         else
         {
-        $sql="SELECT student username,roll,books.bid,name,authors,edition,approve,issue,issue_book.return FROM student inner join issue_book ON student.username=issue_book.username inner join books ON issue_book.bid=books.bid WHERE issue_book.approve !='' and issue_book.approve !='Yes' ORDER BY `issue_book`.`return` DESC";
+        $sql="SELECT student.username,roll,books.bid,name,authors,edition,approve,issue,issue_book.return FROM student inner join issue_book ON student.username=issue_book.username inner join books ON issue_book.bid=books.bid WHERE issue_book.approve !='' and issue_book.approve !='Yes' ORDER BY `issue_book`.`return` DESC";
         $res=mysqli_query($conn,$sql);
         }
 
