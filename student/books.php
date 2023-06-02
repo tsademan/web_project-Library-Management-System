@@ -93,11 +93,13 @@
                 if(isset($_SESSION['login_user']))
 
                 { 
-                       $p=mysqli_query($conn,"SELECT pic FROM student where username='$_SESSION[login_user]' ;");
-                       $row2=mysqli_fetch_assoc($p);
-                       $pic = $row2['pic'];
-                    // Display the profile image
-                     echo "<img class='img-circle profile-img' height=110 width=120 src='images/" . $pic . " '>";
+					$p=mysqli_query($conn,"SELECT pic FROM admin where username='$_SESSION[login_user]' ;");
+					$row2=mysqli_fetch_assoc($p);
+						   $pic = $row2['pic'];
+					 echo "<div style='text-align: center'>
+					 <img class='img-circle profile-img' height=110 width=120 src='images/" . $pic . " '>
+						</div>";
+ 
                    
                     echo "</br></br>";
 

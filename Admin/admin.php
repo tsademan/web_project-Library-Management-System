@@ -40,7 +40,7 @@ session_start();
                  <input style="width:100px;" type="submit" name="submit">
                 </div>
               </form><br><br><br>
-              <a href="" style="font-size:20px;color:rgb(247, 6, 206);">Forget password </a><span style="position:relative;left:100px;color:black">
+              <a href="update_password.php" style="font-size:20px;color:rgb(247, 6, 206);">Forget password </a><span style="position:relative;left:100px;color:black">
                 New For This Website ?<a href="Registration.php" style="color:red;font-size:20px;"> SignUp</a></span>
 
           </div>

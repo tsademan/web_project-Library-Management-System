@@ -50,6 +50,7 @@
                        $pic = $row2['pic'];
                     // Display the profile image
                     echo "<img class='img-circle profile_img' height=30 width=30 src='images/" . $pic . "'>";
+                    echo "   ". $_SESSION['login_user']; 
                       ?>
                     </div>
                   </a></li>

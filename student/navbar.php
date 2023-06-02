@@ -42,12 +42,14 @@
                   <li><a href="">
                     <div style="color: white">
                     <?php
-                       $p=mysqli_query($conn,"SELECT pic FROM student where username='$_SESSION[login_user]' ;");
-                       $row2=mysqli_fetch_assoc($p);
-                       $pic = $row2['pic'];
-                    // Display the profile image
-                    echo "<img class='img-circle profile_img' height=30 width=30 src='images/" . $pic . "'>";
-                        echo " ".$_SESSION['login_user']; 
+                         $p=mysqli_query($conn,"SELECT pic FROM student where username='$_SESSION[login_user]' ;");
+                         $row2=mysqli_fetch_assoc($p);
+                         $pic = $row2['pic'];
+                  echo "<div style='text-align: center'>
+                  <img class='img-circle profile-img' height=30 width=40 src='images/" . $pic . " '>
+                     </div>";
+      
+                        echo "".$_SESSION['login_user']; 
                       ?>
                     </div>
                   </a></li>
