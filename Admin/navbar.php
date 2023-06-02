@@ -35,7 +35,7 @@
                   <li><a href="profile.php">PROFILE</a></li>
                 
                   <li><a href="student.php">
-                    STUDENT-INFORMATION
+                    STUDENT-INFO
                   </a></li>
                   <li><a href="fine.php">FINES</a></li>
                 </ul>

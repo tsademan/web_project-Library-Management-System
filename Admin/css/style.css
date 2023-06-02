@@ -62,11 +62,12 @@ section img{
     /* background-color:gray; */
     position:relative;left:510px;
     top:-360px;
-    opacity:.9;
+    /* opacity:.9; */
+    color:red;
 } 
-h1{
+ h1{
     text-align: center;
-    color:aqua;
+    color:black;
     font-weight:bold; 
 }
 p{

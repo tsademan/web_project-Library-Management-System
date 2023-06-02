@@ -1,6 +1,7 @@
 
 <?php
 include "dbConnection.php";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,16 +24,37 @@ include "dbConnection.php";
 </head>
 <body>  
     <header>
-         <nav>
-           <ul>
+    <?php
+          if(isset($_SESSION['login_user']))
+          {
+            ?>
+            <nav>
+            <ul>
                <li><a href="index.php">HOME</a></li>
                <li><a href="books.php">BOOKS</a></li>
-               <li><a href="admin.php">ADMIN_LOGIN</a></li>
-               <li><a href="Registration.php">REGISTRATION</a></li>
+               <li><a href="logout.php">LOGOUT</a></li>
+               <li><a href="profile.php">PROFILE</a></li>
+               <li><a href="student.php">STUDENT-INFO</a></li>
                <li><a href="feedback.php">FEEDBACK</a></li>
-               <li><a href="student.php">STUDENT-INFORMATION</a></li>
             </ul>
           </nav>
+           <?php
+          }
+          else
+          {
+            ?>
+            <nav>
+            <ul>
+               <li><a href="index.php">HOME</a></li>
+               <li><a href="books.php">BOOKS</a></li>
+               <li><a href="admin.php">LOGIN</a></li>
+               <li><a href="Registration.php">SIGN-UP</a></li>
+               <li><a href="feedback.php">FEEDBACK</a></li>
+            </ul>
+          </nav>
+          <?php
+          }
+         ?>
     </header>
     <!-- ______________________________search bar -->
     <div class="wrapper">
@@ -49,7 +71,7 @@ include "dbConnection.php";
      if(isset($_POST['submit']))
   
       {
-        $q=mysqli_query($conn,"SELECT fname,lname,contact,age,sex,email,r_date FROM `student2`
+        $q=mysqli_query($conn,"SELECT fname,lname,contact,username,sex,email,r_date FROM `student`
          where fname like '%$_POST[search]%';");
 
       if(mysqli_num_rows($q)==0)
@@ -64,7 +86,7 @@ include "dbConnection.php";
         echo "<th>"; echo "First-Name"; echo "</th>";
         echo "<th>"; echo "Last-Name"; echo "</th>";
         echo "<th>"; echo "Contact"; echo "</th>";
-        echo "<th>"; echo "Age"; echo "</th>";
+        echo "<th>"; echo "username"; echo "</th>";
         echo "<th>"; echo "Sex"; echo "</th>";
         echo "<th>"; echo "email"; echo "</th>";
         echo "<th>"; echo "Reg-Date"; echo "</th>";
@@ -76,7 +98,7 @@ include "dbConnection.php";
            echo "<td>"; echo $row['fname']; echo "</td>";
            echo "<td>"; echo $row['lname']; echo "</td>";
            echo "<td>"; echo $row['contact']; echo "</td>";
-           echo "<td>"; echo $row['age']; echo "</td>";
+           echo "<td>"; echo $row['username']; echo "</td>";
            echo "<td>"; echo $row['sex']; echo "</td>";
            echo "<td>"; echo $row['email']; echo "</td>";
            echo "<td>"; echo $row['r_date']; echo "</td>";
@@ -88,14 +110,14 @@ include "dbConnection.php";
     else
     {  
  
-      $res=mysqli_query($conn,"SELECT fname,lname,contact,age,sex,email,r_date FROM `student2`");
+      $res=mysqli_query($conn,"SELECT fname,lname,contact,username,sex,email,r_date FROM `student`");
       echo "<table class='table table-bordered table-hover'>";
       echo "<tr style='background-color:white;'>";
       //Table header
       echo "<th>"; echo "First-Name"; echo "</th>";
       echo "<th>"; echo "Last-Name"; echo "</th>";
       echo "<th>"; echo "Contact"; echo "</th>";
-      echo "<th>"; echo "Age"; echo "</th>";
+      echo "<th>"; echo "username"; echo "</th>";
       echo "<th>"; echo "Sex"; echo "</th>";
       echo "<th>"; echo "email"; echo "</th>";
       echo "<th>"; echo "Reg-Date"; echo "</th>";
@@ -107,7 +129,7 @@ include "dbConnection.php";
            echo "<td>"; echo $row['fname']; echo "</td>";
            echo "<td>"; echo $row['lname']; echo "</td>";
            echo "<td>"; echo $row['contact']; echo "</td>";
-           echo "<td>"; echo $row['age']; echo "</td>";
+           echo "<td>"; echo $row['username']; echo "</td>";
            echo "<td>"; echo $row['sex']; echo "</td>";
            echo "<td>"; echo $row['email']; echo "</td>";
            echo "<td>"; echo $row['r_date']; echo "</td>";

@@ -1,5 +1,6 @@
 <?php 
 include ("dbConnection.php");
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,17 +16,37 @@ include ("dbConnection.php");
      <header>
         <div class="logo">
         </div>
-         
-       <nav>
-         <ul>
-            <li><a href="index.php">HOME</a></li>
-            <li><a href="books.php">BOOKS</a></li>
-            <li><a href="admin.php">ADMIN_LOGIN</a></li>
-            <li><a href="Registration.php">REGISTRATION</a></li>
-            <li><a href="feedback.php">FEEDBACK</a></li>
-            <li><a href="student.php">STUDENT-INFORMATION</a></li>
-         </ul>
-       </nav>
+         <?php
+          if(isset($_SESSION['login_user']))
+          {
+            ?>
+            <nav>
+            <ul>
+               <li><a href="index.php">HOME</a></li>
+               <li><a href="books.php">BOOKS</a></li>
+               <li><a href="logout.php">LOGOUT</a></li>
+               <li><a href="profile.php">PROFILE</a></li>
+               <li><a href="student.php">STUDENT-INFO</a></li>
+               <li><a href="feedback.php">FEEDBACK</a></li>
+            </ul>
+          </nav>
+           <?php
+          }
+          else
+          {
+            ?>
+            <nav>
+            <ul>
+               <li><a href="index.php">HOME</a></li>
+               <li><a href="books.php">BOOKS</a></li>
+               <li><a href="admin.php">LOGIN</a></li>
+               <li><a href="Registration.php">SIGN-UP</a></li>
+               <li><a href="feedback.php">FEEDBACK</a></li>
+            </ul>
+          </nav>
+          <?php
+          }
+         ?>
        <h1 style="color:wheat;font-size:20px">ONLINE LIBRARY MANAGEMENT SYSTEM</h1>
      </header>
      <section>

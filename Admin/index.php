@@ -27,8 +27,8 @@ session_start();
                <li><a href="books.php">BOOKS</a></li>
                <li><a href="logout.php">LOGOUT</a></li>
                <li><a href="profile.php">PROFILE</a></li>
+               <li><a href="student.php">STUD-INFO</a></li>
                <li><a href="feedback.php">FEEDBACK</a></li>
-               
             </ul>
           </nav>
            <?php
@@ -65,6 +65,12 @@ session_start();
        font-weight: bold;'>Welcome</span><br><div style='color:white;font-size: 20px;position:relative;top:-320px;left:1000px;'>".$_SESSION['login_user']."</div>";
        }
       ?> 
+      <div class="box">
+        <br><br><br><br><br><br>;
+       <h1 style="font-size:30px;">Welcome To Library</h1>
+       <h1 style="font-size:24px;">Opens at 9:30 Am</h1>
+       <h1 style="font-size:24px;">Closes at 4:00 Pm</h1>
+       </div>
      </section>
    
      <footer>
