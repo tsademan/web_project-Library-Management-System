@@ -54,7 +54,8 @@ session_start();
        <div class="boxx">
          <h2>If you have suggestions or questions,please comment below</h2>
        <form action="" method="post">
-        <input id="h" type="textarea" name="comment" placeholder="say something ..."><br><br><br><br>
+        <input id="h" type="textarea" name="comment" placeholder="say something ..." required="">
+        <br><br><br><br>
         <input id="hh" type="submit" name="submit" value="Comment">
        </form>
         </div>

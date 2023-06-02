@@ -31,7 +31,7 @@ session_start();
         <section>
          <img style="height:460px;width: 1360px;" src="images/br2.webp">
           <div class="data">
-              <form name="login" action="" method="post">
+              <form name="login" action="admin.php" method="post">
                 <h1>LIBRARY MANAGEMENT SYSTEM</h1> <br>
                 <h2>User Login Form</h2> <br>
                 <div class="form2">
@@ -54,7 +54,6 @@ session_start();
         $res=mysqli_query($conn,"SELECT * FROM `admin` WHERE username='$_POST[username]' && passw='$_POST[passw]';");
         $row=mysqli_fetch_assoc($res);
         $count=mysqli_num_rows($res);
-
         if($count==0)
         {
           ?>
