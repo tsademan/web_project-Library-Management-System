@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $conn = mysqli_connect($servername, $username, $password, $dbname);
     $fname =$_POST['fname'];
     $lname = $_POST['lname'];
+    $roll = $_POST['roll'];
     $contact = $_POST['contact'];
     $username = $_POST['username'];
     $sex =  $_POST['sex'];
@@ -27,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     }
     if($count==0) { 
-      mysqli_query($conn,"INSERT INTO `student` VALUES('$_POST[fname]','$_POST[lname]','$_POST[contact]','$_POST[username]',
+      mysqli_query($conn,"INSERT INTO `student` VALUES('$_POST[fname]','$_POST[lname]','$_POST[roll]','$_POST[contact]','$_POST[username]',
       '$_POST[sex]','$_POST[email]','$_POST[r_date]','$_POST[pass]','p.jpg');");
       $conn->close();
       ?>

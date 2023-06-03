@@ -16,10 +16,7 @@ session_start();
      <header>
         <div class="logo">
         </div>
-        <?php
-       if(isset($_SESSION['login_user']))
-      {
-        ?>
+         
        <nav>
          <ul>
             <li><a href="index.php">HOME</a></li>
@@ -29,32 +26,17 @@ session_start();
             <li><a href="Admin_feedback.php">FEEDBACK</a></li>
          </ul>
        </nav>
-       <?php
-      }
-      else
-      { ?>
-        <nav>
-        <ul>
-           <li><a href="index.php">HOME</a></li>
-           <li><a href="books.php">BOOKS</a></li>
-           <li><a href="std_Login.php">LOGIN</a></li>
-           <li><a href="Registration.php">SIGN-UP</a></li>
-           <li><a href="feedback.php">FEEDBACK</a></li>
-        </ul>
-      </nav>
-      <?php
-      }
-       ?>
        <h1 style="color:wheat">ONLINE LIBRARY MANAGEMENT SYSTEM</h1>
      </header>
      <section>
       
        <div class="boxx">
-         <h2>If you have suggestions or questions,please comment below</h2>
+         <h2>Welcome</h2>
        <form action="" method="post">
         <input id="h" type="textarea" name="comment" placeholder="say something ..." required="">
         <br><br><br><br>
-        <input id="hh" type="submit" name="submit" value="Comment">
+         <input id="hh" type="submit" name="submit" value="Comment">
+         <input id="hh" type="button" name="view" value="view">
        </form>
         </div>
      </section>

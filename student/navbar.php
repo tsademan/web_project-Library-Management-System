@@ -46,7 +46,7 @@
                          $row2=mysqli_fetch_assoc($p);
                          $pic = $row2['pic'];
                   echo "<div style='text-align: center'>
-                  <img class='img-circle profile-img' height=30 width=40 src='images/" . $pic . " '>
+                  <img class='img-circle profile-img' height=30 width=30 src='images/" . $pic . " '>
                      </div>";
       
                         echo "".$_SESSION['login_user']; 
