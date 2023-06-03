@@ -173,8 +173,14 @@
 
     mysqli_query($conn,"UPDATE books SET quantity = quantity-1 where bid='$_SESSION[bid]' ;");
 
-    $res=mysqli_query($conn,"SELECT quantity from books where bid='$_SESSION[bid];");
 
+    
+    $res = mysqli_query($conn, "SELECT quantity from books where bid='$_SESSION[bid]'");
+    if (!$res) {
+        printf("Error: %s\n", mysqli_error($conn));
+        exit();
+    }
+    
     while($row=mysqli_fetch_assoc($res))
     {
       if($row['quantity']==0)

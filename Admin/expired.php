@@ -119,14 +119,7 @@ th,td
                 <?php
                 if(isset($_SESSION['login_user']))
 
-                { 	
-                  $p=mysqli_query($conn,"SELECT pic FROM admin where username='$_SESSION[login_user]' ;");
-                  $row2=mysqli_fetch_assoc($p);
-          $pic = $row2['pic'];
-          echo "<div style='text-align: center'>
-          <img class='img-circle profile-img' height=110 width=120 src='images/" . $pic . " '>
-          </div>";
-
+                { 	echo "<img class='img-circle profile_img' height=120 width=120 src='images/".$_SESSION['pic']."'>";
                     echo "</br></br>";
 
                     echo "Welcome ".$_SESSION['login_user']; 
@@ -200,7 +193,7 @@ th,td
           $day= floor($diff/(60*60*24)); 
           $fine= $day*.10;
         }
-      
+      }
           $x= date("Y-m-d"); 
           mysqli_query($conn,"INSERT INTO `fine` VALUES ('$_POST[username]', '$_POST[bid]', '$x', '$day', '$fine','not paid') ;");
 
@@ -209,7 +202,7 @@ th,td
           mysqli_query($conn,"UPDATE issue_book SET approve='$var1' where username='$_POST[username]' and bid='$_POST[bid]' ");
 
           mysqli_query($conn,"UPDATE books SET quantity = quantity+1 where bid='$_POST[bid]' ");
-        }
+          
         }
       }
     
