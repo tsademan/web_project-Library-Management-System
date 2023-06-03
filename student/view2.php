@@ -1,6 +1,7 @@
 <?php 
 include ("dbConnection.php");
-session_start();
+include ("navbar.php");
+//session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +30,7 @@ session_start();
     text-align: center;
     font-weight:bold; 
 }
-#view-btn{
+.hh{
     position: absolute;
     left:700px;
     top:300px;
@@ -47,7 +48,7 @@ session_start();
     text-align: center;
     font-weight:bold; 
 }
-#view-btn:hover{
+.hh:hover{
    background-color:green;
 }
 .h:hover{
@@ -95,50 +96,38 @@ session_start();
       
        <div class="boxx">
          <h2>Welcome</h2>
-       <form action="" method="post">
-        <input class="h1" type="text" name="username" placeholder="username"  required="">
-        <input id="h" type="textarea" name="comment" placeholder="say something ..." required="">
-        <br><br><br><br>
-         <input class="h" type="submit" name="submit" value="Comment">
-         <input id="view-btn" type="button" name="view" value="view">
-       </form>
         </div>
-        <script>
-  var viewBtn = document.getElementById("view-btn");
-  
-  // Add a click event listener to the button
-  viewBtn.addEventListener("click", function() {
-    // Redirect to the new page
-    window.location.href = "view.php";
-     });
-   </script>
      </section>
    
    </div> 
    <?php
-    if(isset($_POST['submit']))
+   if(isset($_SESSION['login_user']))
     {
-        if(isset($_SESSION['login_user']))
-        {
-        $sql="INSERT INTO `Ctable` VALUES('','$_POST[username]','$_POST[comment]');";
-       if(mysqli_query($conn,$sql))
-       {
-        ?>
-        <script type="text/javascript">
-          alert("Thank you for your comment");
-        </script>
-        <?php
-       }
-      }
-      else
-      {
+        $q="SELECT * FROM `Ctable`;";
+    
+    echo "<table class='table table-bordered table-hover' >";
+        echo "<tr style='background-color: #6db6b9e6;'>";
+            //Table header
+            echo "<th>"; echo "Admin-Username";	echo "</th>";
+            echo "<th>"; echo "comment";  echo "</th>";
+        echo "</tr>";	
+
+            echo "<tr>";
+           // echo "<td>"; echo $row['username']; echo "</td>";
+           // echo "<td>"; echo $row['comment']; echo "</td>";
+            echo "</tr>";
+    echo "</table>";
+        }
+    
+    else
+    {
         ?>
         <script type="text/javascript">
           alert("you need to login first");
         </script>
         <?php
-      }
     }
+      
    ?>
 </body>
 </html>
