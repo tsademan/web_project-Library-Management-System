@@ -20,8 +20,8 @@ include ("dbConnection.php");
          <ul>
             <li><a href="index.php">HOME</a></li>
             <li><a href="books.php">BOOKS</a></li>
-            <li><a href="std_Login.php">STUDENT_LOGIN</a></li>
-            <li><a href="Registration.php">REGISTRATION</a></li>
+            <li><a href="std_Login.php">LOGIN</a></li>
+            <li><a href="Registration.php">SIGN-UP</a></li>
             <li><a href="feedback.php">FEEDBACK</a></li>
          </ul>
        </nav>
