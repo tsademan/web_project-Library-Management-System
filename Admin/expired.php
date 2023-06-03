@@ -200,7 +200,7 @@ th,td
           $day= floor($diff/(60*60*24)); 
           $fine= $day*.10;
         }
-      }
+      
           $x= date("Y-m-d"); 
           mysqli_query($conn,"INSERT INTO `fine` VALUES ('$_POST[username]', '$_POST[bid]', '$x', '$day', '$fine','not paid') ;");
 
@@ -209,7 +209,7 @@ th,td
           mysqli_query($conn,"UPDATE issue_book SET approve='$var1' where username='$_POST[username]' and bid='$_POST[bid]' ");
 
           mysqli_query($conn,"UPDATE books SET quantity = quantity+1 where bid='$_POST[bid]' ");
-          
+        }
         }
       }
     

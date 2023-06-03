@@ -20,46 +20,22 @@ include ("navbar.php");
    
    </div> 
    <?php
-   if(isset($_SESSION['login_user']))
-    {
-        $sql="SELECT * FROM `Ctable`;";
-        // if(mysqli_num_rows($q)==0)
-        // {
-        //     echo "Sorry! No any feedback found.";
-        // }
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-    
+    $res=mysqli_query($conn,"SELECT * FROM `Ctable` ORDER BY `Ctable`.`id` DESC;");
     echo "<table class='table table-bordered table-hover' >";
         echo "<tr style='background-color: #6db6b9e6;'>";
             //Table header
             echo "<th>"; echo "Admin-Username";	echo "</th>";
             echo "<th>"; echo "comment";  echo "</th>";
         echo "</tr>";	
-        
+
+        while($row=mysqli_fetch_assoc($res))
+        {
             echo "<tr>";
             echo "<td>"; echo $row['username']; echo "</td>";
             echo "<td>"; echo $row['comment']; echo "</td>";
             echo "</tr>";
-        
-    echo "</table>";
         }
-     }
-     else 
-     {
-         echo "0 results";
-     }
-    }
-    else
-    {
-        ?>
-        <script type="text/javascript">
-          alert("you need to login first");
-        </script>
-        <?php
-    }
-      
+    echo "</table>";
    ?>
 </body>
 </html>
