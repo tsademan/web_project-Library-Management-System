@@ -203,7 +203,7 @@ th,td
         }
       }
           $x= date("Y-m-d"); 
-          mysqli_query($conn,"INSERT INTO `fine` VALUES ('$_POST[username]', '$_POST[bid]', '$x', '$day', '$fine','not paid') ;");
+          mysqli_query($conn,"INSERT INTO `fine` VALUES ('$_POST[username]', '$_POST[bid]', '$x', '$day', '$fine','not paid - on time') ;");
 
 
           $var1='<p style="color:yellow; background-color:green;">RETURNED</p>';
