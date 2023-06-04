@@ -119,8 +119,14 @@ th,td
                 <?php
                 if(isset($_SESSION['login_user']))
 
-                { 	echo "<img class='img-circle profile_img' height=120 width=120 src='images/".$_SESSION['pic']."'>";
-                    echo "</br></br>";
+                { 
+                  
+                  $p=mysqli_query($conn,"SELECT pic FROM admin where username='$_SESSION[login_user]' ;");
+                  $row2=mysqli_fetch_assoc($p);
+                 $pic = $row2['pic'];
+          echo "<div style='text-align: center'>
+          <img class='img-circle profile-img' height=110 width=120 src='images/" . $pic . " '>
+          </div>";
 
                     echo "Welcome ".$_SESSION['login_user']; 
                 }
@@ -188,10 +194,12 @@ th,td
         $c= strtotime(date("Y-m-d"));
         $diff= $c-$d;
 
-        if($diff>=0)
-        {
-          $day= floor($diff/(60*60*24)); 
-          $fine= $day*.10;
+        $day = 0;
+        $fine = 0;
+        
+        if ($diff >= 0) {
+          $day = floor($diff / (60 * 60 * 24)); 
+          $fine = $day * 0.10;
         }
       }
           $x= date("Y-m-d"); 
